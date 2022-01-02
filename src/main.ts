@@ -88,7 +88,7 @@ export function* parseMultipartFormData({
         throw new Error(`Header line ending at ${i} does not have a colon`);
       }
       // TODO Support multiple values.
-      headers[headerName] = headerValue.trimStart();
+      headers[headerName.toLowerCase()] = headerValue.trimStart();
     }
 
     const posOfBoundary = indexOf(raw, i, formDataMidPrefix);

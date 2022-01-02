@@ -23,6 +23,7 @@ const parser = parseMultipartFormData({
 for (const { headers, value } of parser) {
   console.log("Parsed field:");
   for (const [name, value] of Object.entries(headers)) {
+    // Header names are lowercased; header values are left-trimmed.
     console.log("Header", name, "=", value);
   }
   console.log("Magic bytes:", [...value.subarray(0, 8)]);
