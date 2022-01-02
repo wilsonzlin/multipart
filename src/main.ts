@@ -1,3 +1,4 @@
+import assertExists from "@xtjs/lib/js/assertExists";
 import encodeUtf8 from "@xtjs/lib/js/encodeUtf8";
 import decodeUtf8 from "@xtjs/lib/js/decodeUtf8";
 import splitString from "@xtjs/lib/js/splitString";
@@ -88,7 +89,7 @@ export function* parseMultipartFormData({
         throw new Error(`Header line ending at ${i} does not have a colon`);
       }
       // TODO Support multiple values.
-      headers[headerName.toLowerCase()] = headerValue.trimStart();
+      headers[assertExists(headerName).toLowerCase()] = headerValue.trimStart();
     }
 
     const posOfBoundary = indexOf(raw, i, formDataMidPrefix);
