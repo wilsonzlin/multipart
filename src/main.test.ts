@@ -30,21 +30,21 @@ test("it works", () => {
   ]).toEqual([
     {
       headers: {
-        "Content-Disposition": 'form-data; name="text"',
+        "content-disposition": 'form-data; name="text"',
       },
       value: encodeUtf8("text default"),
     },
     {
       headers: {
-        "Content-Disposition": 'form-data; name="file1"; filename="a.txt"',
-        "Content-Type": "text/plain",
+        "content-disposition": 'form-data; name="file1"; filename="a.txt"',
+        "content-type": "text/plain",
       },
       value: encodeUtf8("Content of a.txt.\n"),
     },
     {
       headers: {
-        "Content-Disposition": 'form-data; name="file2"; filename="a.html"',
-        "Content-Type": "text/html",
+        "content-disposition": 'form-data; name="file2"; filename="a.html"',
+        "content-type": "text/html",
       },
       value: encodeUtf8("<!DOCTYPE html><title>Content of a.html.</title>\n"),
     },
